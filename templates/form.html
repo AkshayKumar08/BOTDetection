@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Social Networking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/form.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/table.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Social Networking</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="/user">User</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="section">
+		<div class="container">  
+		  <form id="signIn" action="/submit" method="POST">
+			<h3>User Registration</h3>
+			<fieldset>
+			  <input placeholder="Your User Name" type="text" name="uname" tabindex="1" required autofocus>
+			</fieldset>
+			<fieldset>
+			  <input placeholder="Your Email" type="text" name="mail" tabindex="2" required autofocus>
+			</fieldset>
+			<fieldset>
+			  <input type="date" name="dob" tabindex="3" required autofocus>
+			</fieldset>
+			<fieldset>
+			  <input placeholder="Your Password" type="password" name="password" tabindex="5" required autofocus>
+			</fieldset>
+			<fieldset>
+				<select name="gender" tabindex="6" >
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+			</fieldset>
+			<fieldset>
+			  <input placeholder="Mobile number" type="number" name="mobile" tabindex="7" required autofocus>
+			</fieldset>
+			<fieldset>
+			  <input placeholder="Address" type="text" name="address" tabindex="8" required autofocus>
+			</fieldset>
+			<fieldset>
+				<button name="submit" type="submit" id="signIn-submit">Submit</button>
+			</fieldset>
+		  </form>
+		</div>        
+    </section>
+</body>
+
+</html>

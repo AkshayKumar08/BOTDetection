@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Social Networking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/form.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/table.css') }}">
+</head>
+
+<body>
+	<header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Social Networking</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/adminhome">Home</a></li>
+					<li><a href="/users">View Users</a></li>
+					<li class="active"><a href="/predict">Prediction</a></li>
+					<li><a href="/analysis">Result</a></li>
+					<li><a href="/">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <section>
+        <div>
+            <table align="center" id="predict" border="1">
+                <thead>
+                    <th>ids</th>
+                    <th>followers_count</th>
+                    <th>friends_count</th>
+                    <th>listed_count</th>
+                    <th>favourites_count</th>
+                    <th>verified</th>
+                    <th>statuses_count</th>
+                    <th>default_profile</th>
+                    <th>username</th>
+                </thead>
+                {% for a,b,c,d,e,f,g,h,i,j,k in predict %}
+                <tr>
+                    <td>{{a}}</td>
+                    <td>{{c}}</td>
+                    <td>{{d}}</td>
+                    <td>{{e}}</td>
+                    <td>{{f}}</td>
+                    <td>{{g}}</td>
+                    <td>{{h}}</td>
+                    <td>{{i}}</td>
+                    <td>{{k}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>

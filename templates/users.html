@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Social Networking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/form.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/table.css') }}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Social Networking</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/adminhome">Home</a></li>
+					<li class="active"><a href="/users">View Users</a></li>
+					<li><a href="/predict">Prediction</a></li>
+					<li><a href="/analysis">Result</a></li>
+					<li><a href="/">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div>
+            <table align="center" id="users" border="1">
+                <thead>
+                    <th>User Name</th>
+                    <th>User Mail</th>
+                    <th>Gender</th>
+                    <th>Dob</th>
+                    <th>Mobile</th>
+                    <th>address</th>
+                </thead>
+                {% for a,b,c,d,e,f,g,h,i in users %}
+                <tr>
+                    <td>{{b}}</td>
+                    <td>{{d}}</td>
+                    <td>{{e}}</td>
+                    <td>{{f}}</td>
+                    <td>{{g}}</td>
+                    <td>{{h}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>
